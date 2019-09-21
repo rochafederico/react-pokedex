@@ -2,9 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route, Link, Redirect } from "react-router-dom";
 
 import ListComponent from './components/list';
-import HomeComponent from './components/home';
 import DetailComponent from './components/detail';
-import Error404 from './components/Error404';
 
 const styles = {
   link: {
@@ -22,16 +20,11 @@ const RedirectHome = () => {
 export default function App() {
   return (
     <BrowserRouter>
-      <ul>
-        <li><Link style={styles.link} activeStyle={styles.active} to="/">Inicio</Link></li>
-        <li><Link style={styles.link} activeStyle={styles.active} to="/list">Listado</Link></li>
-      </ul>
       <Switch>
-        <Route path="/list" component={ListComponent} />
-        <Route path="/detalle" exact component={DetailComponent} />
+        <Route path="/" exact component={ListComponent} />
+        <Route path="/:search" exact component={ListComponent} />
         <Route path="/detalle/:id" component={DetailComponent} />
-        <Route path="/" exact component={HomeComponent} />
-        <Route component={Error404} />
+        <Route component={RedirectHome} />
       </Switch>
     </BrowserRouter>
   );
