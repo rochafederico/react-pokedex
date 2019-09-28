@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.header>h1 {
+    flex: auto;
+    text-align: left;
+}
+
+.header>input,.header>select {
+    background-color: #222;
+    border: 1px solid #434343;
+    color: #999;
+    padding: 4px;
+    border-radius: 4px;
+    margin-left: 5px;
+    min-height: 17px;
+}
+.section{
+}
+.section{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.section > * {
+
+}
